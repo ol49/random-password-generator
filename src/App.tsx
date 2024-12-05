@@ -74,6 +74,10 @@ function App() {
     }
   }
 
+  const handleCopyToClipBoard = () => {
+    navigator.clipboard.writeText(password)
+  }
+
   const handleCheckBoxChange = (state: boolean, stateSetter: (val: boolean) => void) => {
     stateSetter(!state);
   }
@@ -85,9 +89,9 @@ function App() {
           <h1 className="text-4xl font-bold">Random Password Generator</h1>
           <h3 className="font-semibold">Create complex and secure passwords to safeguard your account online.</h3>
         </div>
-        <div className="flex items-center mt-7 justify-center max-w-2xl w-full">
-          <div className="bg-neutral-900 mt-5 w-full p-4 rounded-xl flex justify-between items-center">
-            <span className="font-semibold text-lg">{password}</span>
+        <div className="flex items-center mt-5 space-x-3 justify-center max-w-2xl w-full">
+          <div className="bg-neutral-900 w-full p-4 rounded-xl flex justify-between items-center">
+            <span className="font-semibold text-lg select-text px-3">{password}</span>
             <div className="flex items-center gap-x-4">
               {strength && (
                 <Chip color={chipVarient[strength]} variant="flat" className="dark">{passwordStrength[strength]}</Chip>
@@ -95,7 +99,7 @@ function App() {
               <RefreshCw className="cursor-pointer hover:scale-80 transition-transform" />
             </div>
           </div>
-          <Button color="primary">Copy</Button>
+          <Button color="primary" onClick={handleCopyToClipBoard}>Copy</Button>
         </div>
         <div className="w-full max-w-2xl">
           <div className="mt-8 flex items-center justify-between">
