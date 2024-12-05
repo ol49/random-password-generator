@@ -96,7 +96,7 @@ function App() {
               {strength && (
                 <Chip color={chipVarient[strength]} variant="flat" className="dark">{passwordStrength[strength]}</Chip>
               )}
-              <RefreshCw className="cursor-pointer hover:scale-80 transition-transform" />
+              <RefreshCw className="cursor-pointer hover:scale-80 transition-transform" onClick={() => generatePassword()} />
             </div>
           </div>
           <Button color="primary" onClick={handleCopyToClipBoard}>Copy</Button>
