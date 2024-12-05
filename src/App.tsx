@@ -23,11 +23,11 @@ function App() {
           <div className="mt-8 flex items-center justify-between">
             <p className="text-lg whitespace-nowrap">Password Length: <span className="ml-4 font-bold">16</span></p>
             <div className="flex gap-x-2 items-center">
-              <Button radius="full" size="sm" isIconOnly color="danger">
+              <Button radius="full" size="sm" isIconOnly color="primary" variant="bordered">
                 <MinusIcon />
               </Button>
               <Slider size="lg" step={0.01} maxValue={43} minValue={4} defaultValue={19} className="w-72 dark" />
-              <Button radius="full" size="sm" isIconOnly color="danger">
+              <Button radius="full" size="sm" isIconOnly color="primary" variant="bordered">
                 <PlusIcon />
               </Button>
             </div>
