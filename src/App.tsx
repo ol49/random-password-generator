@@ -1,6 +1,7 @@
 import { Button, Checkbox, Chip, Slider } from "@nextui-org/react"
 import { Check, MinusIcon, PlusIcon, RefreshCw } from "lucide-react"
 import { useEffect, useState } from "react"
+import { toast, ToastContainer, Zoom } from "react-toastify";
 
 function App() {
   const [length, setLength] = useState<number>(16);
@@ -75,7 +76,18 @@ function App() {
   }
 
   const handleCopyToClipBoard = () => {
-    navigator.clipboard.writeText(password)
+    navigator.clipboard.writeText(password);
+    toast.success('Copied to clipboard', {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "dark",
+      transition: Zoom,
+      });
   }
 
   const handleCheckBoxChange = (state: boolean, stateSetter: (val: boolean) => void) => {
@@ -125,6 +137,8 @@ function App() {
           </div>
         </div>
       </div>
+      <ToastContainer/>
+      {/* <Toaster/> */}
     </>
   )
 }
