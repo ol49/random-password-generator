@@ -11,4 +11,4 @@ This is a simple random password generator which is built with the inspiration o
  - hosted in my domain do i can remember it forever.
 
 
-_Thank you for wasting your time here lol : )_
+_Thank you : )_
